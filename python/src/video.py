@@ -14,6 +14,7 @@ class Video:
         # Turn the tags into a tuple here so it's unmodifiable,
         # in case the caller changes the 'video_tags' they passed to us
         self._tags = tuple(video_tags)
+        self.flag = ""
 
     @property
     def title(self) -> str:
@@ -34,4 +35,5 @@ class Video:
         title_txt = str(self.title)
         video_id_txt = "(" + str(self.video_id) + ")"
         tags_txt = "[" + " ".join(self.tags) + "]"
-        return f"{title_txt} {video_id_txt} {tags_txt}"
+        flag_txt = f" - FLAGGED (reason: {self.flag})" if self.flag else ""
+        return f"{title_txt} {video_id_txt} {tags_txt}{flag_txt}"

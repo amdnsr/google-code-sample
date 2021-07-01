@@ -13,7 +13,7 @@ class Playlist:
         # A list of video_ids
         self.videos = []
     
-    def is_valid_name(name):
-        if len(name.split(' ')) > 1:
-            return False
-        return True
+    # def is_valid_name(name):
+    #     if len(name.split(' ')) > 1:
+    #         return False
+    #     return True
